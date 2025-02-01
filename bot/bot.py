@@ -41,7 +41,7 @@ async def cmd_start(message: types.Message):
     conn = get_db_connection()
     cursor = conn.cursor()   
 
-    cursor.execute("INSERT INTO chats (user_id) VALUES (%s) ON CONFLICT DO NOTHING", (user_id,))
+    cursor.execute("INSERT INTO chat (user_id) VALUES (%s) ON CONFLICT DO NOTHING", (user_id,))
     conn.commit()
     conn.close()    
 
