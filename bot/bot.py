@@ -58,6 +58,10 @@ async def cmd_help(message: types.Message):
     )
     await message.answer(help_text)
 
+
+# router = Router() # Разобраться с роутами
+
+
 @dp.message(Command("add_food"))
 async def cmd_add_food(message: types.Message, command):
     # Если не переданы никакие аргументы
@@ -89,8 +93,10 @@ async def cmd_add_food(message: types.Message, command):
         await message.answer("Раз в сколько дней давать еду?")
         #await state.set_state(FoodStates.waiting_for_interval)  # Переводим в состояние ожидания интервала
     else:
+
         # Написать sql запросс
 
+        
         # Отправляем ответ пользователю
         await message.answer(f"Еда добавленна: {description}, Тип: {food_type}")
 
